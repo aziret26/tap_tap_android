@@ -5,6 +5,7 @@ public class CubeController : MonoBehaviour {
 
 	public int speed;
 	private Color[] colors;
+	public GameObject explosion;
 
 	void Start(){
 		colors = new Color[3];
@@ -16,11 +17,25 @@ public class CubeController : MonoBehaviour {
 
 	void Update () {
 		//moves obstacle down
-		rigidbody.velocity = transform.forward * speed;
+		rigidbody2D.velocity = transform.forward * speed;
 	}
 	private Color getRandomColor(){
 		int rand = Random.Range(0,1000)%3;
-		Debug.Log ("rand: "+rand);
 		return colors[rand];
 	}
+	void OnTriggerEnter2D(Collider2D other){
+		
+		if (other.tag == "Player") {
+			Instantiate (explosion, gameObject.transform.position, gameObject.transform.rotation);
+			Destroy (gameObject);
+			Destroy (explosion,1);
+		}else {
+			Destroy(gameObject);
+		}
+		Debug.Log ("Trigger: "+other.tag);
+	}
+	void destroyExplosion(){
+
+	}
+
 }

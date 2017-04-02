@@ -1,11 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\CubeController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\DestroyByTime.cs">
     <Files>
-      <File FileName="Assets\scripts\BGScroller.cs" Line="47" Column="2" />
-      <File FileName="Assets\scripts\DestroyByBoundary.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\CubeController.cs" Line="11" Column="27" />
-      <File FileName="Assets\scripts\CubeSpawner.cs" Line="22" Column="29" />
+      <File FileName="Assets\scripts\Player.cs" Line="36" Column="4" />
+      <File FileName="Assets\scripts\PlayerController.cs" Line="43" Column="32" />
+      <File FileName="Assets\scripts\BGScroller.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\CubeController.cs" Line="31" Column="24" />
+      <File FileName="Assets\scripts\CubeSpawner.cs" Line="6" Column="25" />
+      <File FileName="Assets\scripts\DestroyByTime.cs" Line="16" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

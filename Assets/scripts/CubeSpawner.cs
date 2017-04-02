@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CubeSpawner : MonoBehaviour {
 
-	public Rigidbody obj;
+	public Rigidbody2D obj;
 	public float time;
 
 	public GameObject leftSpawner;
@@ -22,13 +22,13 @@ public class CubeSpawner : MonoBehaviour {
 		int value = Random.Range (0,100);
 		return value;
 	}
-
+	
 	void spawn () {
 		int num = randomSpawner ();
 		if (num % 2 == 0) {
-			Rigidbody objClone = (Rigidbody)Instantiate (obj, leftSpawner.transform.position, leftSpawner.transform.rotation);
+			Rigidbody2D objClone = (Rigidbody2D)Instantiate (obj, leftSpawner.transform.position, leftSpawner.transform.rotation);
 		} else {
-			Rigidbody objClone = (Rigidbody)Instantiate (obj, rightSpawner.transform.position, rightSpawner.transform.rotation);
+			Rigidbody2D objClone = (Rigidbody2D)Instantiate (obj, rightSpawner.transform.position, rightSpawner.transform.rotation);
 		}
 		// You can also acccess other components / scripts of the clone
 	}
