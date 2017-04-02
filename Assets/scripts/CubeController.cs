@@ -32,7 +32,7 @@ public class CubeController : MonoBehaviour {
 		}else {
 			Destroy(gameObject);
 		}
-		Debug.Log ("Trigger: "+other.tag);
+		//Debug.Log ("Trigger: "+other.tag);
 	}
 	void destroyExplosion(){
 
