@@ -28,7 +28,6 @@ public class CubeController : MonoBehaviour {
 		if (other.tag == "Player") {
 			Instantiate (explosion, gameObject.transform.position, gameObject.transform.rotation);
 			Destroy (gameObject);
-			Destroy (explosion,1);
 		}else {
 			Destroy(gameObject);
 		}
