@@ -24,6 +24,7 @@ public class CubeSpawner : MonoBehaviour {
 	}
 	
 	void spawn () {
+		StatisticCounter.score += 1;
 		int num = randomSpawner ();
 		if (num % 2 == 0) {
 			Rigidbody2D objClone = (Rigidbody2D)Instantiate (obj, leftSpawner.transform.position, leftSpawner.transform.rotation);

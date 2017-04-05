@@ -28,9 +28,11 @@ public class CubeController : MonoBehaviour {
 		if (other.tag == "Player") {
 			Instantiate (explosion, gameObject.transform.position, gameObject.transform.rotation);
 			Destroy (gameObject);
+			StatisticCounter.health -= 1;
 		}else {
 			Destroy(gameObject);
 		}
+
 		//Debug.Log ("Trigger: "+other.tag);
 	}
 	void destroyExplosion(){
