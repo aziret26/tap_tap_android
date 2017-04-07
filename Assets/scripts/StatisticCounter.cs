@@ -20,6 +20,6 @@ public class StatisticCounter : MonoBehaviour {
 
 	void OnGUI(){ //вывод инфо(патороны очки)
 		ScoreGUI.text = "Score: " + score;
-		HealthGUI.text = health+" ";
+		HealthGUI.text = "Health: "+health;
 	}
 }

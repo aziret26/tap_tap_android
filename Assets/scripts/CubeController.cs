@@ -7,12 +7,16 @@ public class CubeController : MonoBehaviour {
 	private Color[] colors;
 	public GameObject explosion;
 
+	private SoundController audio;
+
 	void Start(){
 		colors = new Color[3];
-		colors[0] = new Color(160,160,160);
+		colors[0] = Color.white;
 		colors[1] = Color.red;
-		colors[2] = new Color(36,36,150);
+		colors[2] = Color.cyan;
 		renderer.material.color = getRandomColor();
+		audio = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundController>();
+
 	}
 
 	void Update () {
@@ -24,19 +28,19 @@ public class CubeController : MonoBehaviour {
 		return colors[rand];
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		
 		if (other.tag == "Player") {
-			Instantiate (explosion, gameObject.transform.position, gameObject.transform.rotation);
+			GameObject explosion_clon = Instantiate (explosion, gameObject.transform.position, explosion.transform.rotation)as GameObject;
+			explosion_clon.GetComponent<Renderer>().material.color = renderer.material.color;
 			Destroy (gameObject);
 			StatisticCounter.health -= 1;
+			audio.PlayCollisionSound();
+			if(StatisticCounter.health == 0){
+				Instantiate (explosion, other.transform.position, explosion.transform.rotation);
+				other.gameObject.SetActive(false);
+			}
+
 		}else {
 			Destroy(gameObject);
 		}
-
-		//Debug.Log ("Trigger: "+other.tag);
 	}
-	void destroyExplosion(){
-
-	}
-
 }

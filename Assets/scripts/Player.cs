@@ -6,13 +6,17 @@ public class Player : MonoBehaviour {
 	private int position;
 	private bool isMoving;
 
+	private SoundController audio;
+
 	public Rigidbody2D playerContainer;
 	public GameObject explosion;
+	
 	// Use this for initialization
 	void Start () {
-			position = 1;
-			playerContainer.transform.position = positionLeft.transform.position;
-			isMoving = false;
+		audio = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundController>();
+		position = 1;
+		playerContainer.transform.position = positionLeft.transform.position;
+		isMoving = false;
 
 	}
 	
@@ -34,15 +38,14 @@ public class Player : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire1")){
 			if(position == 0){
 				position = 1;
-				//transform.position = positionLeft.transform.position;
 				playerContainer.velocity = -playerContainer.transform.right * 20;
 				isMoving =true;
 			}else{
 				position = 0;
-				//gameObject.transform.position = positionRight.transform.position;
 				playerContainer.velocity = playerContainer.transform.right * 20;
 				isMoving = true;
 			}
+			audio.PlayTouchSound();
 		}
 	}
 }

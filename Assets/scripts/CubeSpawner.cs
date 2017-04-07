@@ -8,6 +8,7 @@ public class CubeSpawner : MonoBehaviour {
 
 	public GameObject leftSpawner;
 	public GameObject rightSpawner;
+
 	// Use this for initialization
 	void Start () {
 		InvokeRepeating ("spawn",time,time);
@@ -27,9 +28,9 @@ public class CubeSpawner : MonoBehaviour {
 		StatisticCounter.score += 1;
 		int num = randomSpawner ();
 		if (num % 2 == 0) {
-			Rigidbody2D objClone = (Rigidbody2D)Instantiate (obj, leftSpawner.transform.position, leftSpawner.transform.rotation);
+			Instantiate (obj, leftSpawner.transform.position, leftSpawner.transform.rotation);
 		} else {
-			Rigidbody2D objClone = (Rigidbody2D)Instantiate (obj, rightSpawner.transform.position, rightSpawner.transform.rotation);
+			Instantiate (obj, rightSpawner.transform.position, rightSpawner.transform.rotation);
 		}
 		// You can also acccess other components / scripts of the clone
 	}

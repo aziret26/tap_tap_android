@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{A1207024-7CC4-0567-4404-2BEE66BAA2A9}</ProjectGuid>
+	<ProjectGuid>{414DDD63-A5FC-3BE3-EECD-9B2F75E6034A}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -39,21 +39,23 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Soft/Installed/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/soft/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Soft/Installed/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/soft/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\scripts\BGScroller.cs" />
+     <Compile Include="Assets\scripts\ButtonController.cs" />
      <Compile Include="Assets\scripts\CubeController.cs" />
      <Compile Include="Assets\scripts\CubeSpawner.cs" />
      <Compile Include="Assets\scripts\DestroyByTime.cs" />
      <Compile Include="Assets\scripts\GameLogic.cs" />
      <Compile Include="Assets\scripts\Player.cs" />
-     <Compile Include="Assets\scripts\PlayerController.cs" />
+     <Compile Include="Assets\scripts\SoundController.cs" />
      <Compile Include="Assets\scripts\StatisticCounter.cs" />
+     <None Include="Assets\ColorfulButtons\Credits.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
